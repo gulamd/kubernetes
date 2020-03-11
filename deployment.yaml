@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: nginx
   labels:
-    app: hello-world
+    app: nginx
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: hello-world
+      app: nginx
   template:
     metadata:
       labels:
-        app: hello-world
+        app: nginx
     spec:
       containers:
-      - name: hello-world
-        image: gcr.io/google-samples/hello-app:1.0
+      - name: nginx
+        image: nginx
         ports:
         - containerPort: 8080
